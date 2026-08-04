@@ -115,16 +115,24 @@ git clone https://github.com/rijol95-web3/ethereum-tools.git
 cd ethereum-tools
 ```
 
-Install dependencies:
+## Install dependencies
+
+### Ethereum Public Key Finder
 
 ```bash
-pip install -r requirements.txt
+pip install -r pub_requirements.txt
 ```
 
-or
+### Ethereum Addresses Extractor
 
 ```bash
-pip install requests eth-keys eth-utils rlp rich
+pip install -r add_requirements.txt
+```
+
+### Ethereum TXID Extractor
+
+```bash
+pip install -r tx_requirements.txt
 ```
 
 ---
@@ -137,19 +145,25 @@ pip install requests eth-keys eth-utils rlp rich
 
 ---
 
-# Repository Structure
+## Repository Structure
 
-```
+```text
 .
 ├── ethereum_public_key_finder.py
 ├── ethereum_addresses_extractor.py
 ├── ethereum_txid_extractor.py
+│
 ├── addresses.txt
 ├── public.txt
 ├── txids.txt
 ├── not_found.txt
 ├── errors.txt
-├── requirements.txt
+│
+├── add_requirements.txt
+├── pub_requirements.txt
+├── tx_requirements.txt
+│
+├── LICENSE
 └── README.md
 ```
 
