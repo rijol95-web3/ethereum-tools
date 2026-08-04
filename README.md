@@ -110,9 +110,9 @@ txids.txt
 Clone the repository:
 
 ```bash
-git clone https://github.com/rijol95-web3/ethereum.git
+git clone https://github.com/rijol95-web3/ethereum-tools.git
 
-cd ethereum
+cd ethereum-tools
 ```
 
 Install dependencies:
