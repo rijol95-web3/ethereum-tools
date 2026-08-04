@@ -146,6 +146,8 @@ pip install -r tx_requirements.txt
 ---
 
 ## Repository Structure
+
+```text
 .
 ├── scripts
 │   ├── ethereum_public_key_finder.py
@@ -166,6 +168,7 @@ pip install -r tx_requirements.txt
 │
 ├── README.md
 └── LICENSE
+```
 
 ---
 
