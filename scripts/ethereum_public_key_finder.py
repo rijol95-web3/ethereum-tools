@@ -833,7 +833,7 @@ def process_address(address: str) -> None:
         with state_lock:
             stats.found += 1
             stats.completed += 1
-            stats.last_result = f"[green]PUBLIC KEY TOPILDI[/green] — {address}"
+            stats.last_result = f"[green]PUBLIC KEY FOUND[/green] — {address}"
             stats.last_tx = tx_hash
 
     except Exception as exc:
