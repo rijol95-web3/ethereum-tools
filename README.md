@@ -1,107 +1,22 @@
-
 # Ethereum Blockchain Toolkit
 
-A collection of Python tools for Ethereum blockchain analysis.
+A collection of high-performance Python tools for Ethereum blockchain analysis, transaction indexing, address extraction, and ECDSA public key recovery.
 
-This repository currently includes:
-
-* **Ethereum Public Key Finder**
-* **Ethereum Addresses Extractor**
-* **Ethereum TXID Extractor**
-
-These tools are designed for blockchain research, data analysis, and educational purposes.
+These tools are intended for blockchain research, data analysis, interoperability testing, and educational purposes.
 
 ---
 
 # Features
 
-## Ethereum Public Key Finder
-
-Recovers Ethereum **public keys** from addresses that have previously signed outgoing transactions.
-
-### Features
-
-* Reads addresses from `addresses.txt`
-* Automatically finds the first outgoing transaction
-* Recovers the public key from the ECDSA signature
-* Verifies that the recovered public key matches the original address
-* Supports multiple public Ethereum RPC endpoints
-* Automatic failover between RPC providers
-* Multi-threaded processing
-* Beautiful real-time terminal dashboard
-* Automatically saves results to `public.txt`
-
-Run:
-
-```bash
-python ethereum_public_key_finder.py
-```
-
-Input:
-
-```
-addresses.txt
-```
-
-Output:
-
-```
-public.txt
-not_found.txt
-errors.txt
-```
-
----
-
-## Ethereum Addresses Extractor
-
-Extracts every Ethereum address found while scanning blockchain transactions.
-
-### Features
-
-* Multi-threaded extraction
-* Automatic RPC failover
-* Duplicate removal
-* Real-time progress display
-* Automatic saving
-
-Run:
-
-```bash
-python ethereum_addresses_extractor.py
-```
-
-Output:
-
-```
-addresses.txt
-```
-
----
-
-## Ethereum TXID Extractor
-
-Extracts transaction hashes (TXIDs) from Ethereum blocks.
-
-### Features
-
-* Block-by-block scanning
-* Multi-threaded processing
-* Automatic RPC switching
-* High-speed extraction
-* Real-time dashboard
-
-Run:
-
-```bash
-python ethereum_txid_extractor.py
-```
-
-Output:
-
-```
-txids.txt
-```
+- High-performance multi-threaded architecture
+- Automatic Ethereum RPC failover
+- Automatic retry mechanism
+- Resume support
+- Beautiful real-time terminal dashboards
+- Low memory usage
+- Automatic output saving
+- Public RPC compatible
+- Easy to use
 
 ---
 
@@ -115,40 +30,17 @@ git clone https://github.com/rijol95-web3/ethereum-tools.git
 cd ethereum-tools
 ```
 
-## Install dependencies
-
-### Ethereum Public Key Finder
-
-```bash
-pip install -r pub_requirements.txt
-```
-
-### Ethereum Addresses Extractor
-
-```bash
-pip install -r add_requirements.txt
-```
-
-### Ethereum TXID Extractor
-
-```bash
-pip install -r tx_requirements.txt
-```
-
 ---
 
-# Requirements
-
-* Python 3.10+
-* Internet connection
-* Public Ethereum RPC endpoints
-
----
-
-## Repository Structure
+# Repository Structure
 
 ```text
 .
+├── images
+│   ├── public_key_finder.png
+│   ├── addresses_extractor.png
+│   └── txid_extractor.png
+│
 ├── scripts
 │   ├── ethereum_public_key_finder.py
 │   ├── ethereum_addresses_extractor.py
@@ -172,69 +64,192 @@ pip install -r tx_requirements.txt
 
 ---
 
-# Output Files
+# Ethereum Public Key Finder
 
-### Ethereum Public Key Finder
+Recover Ethereum **ECDSA public keys** from Ethereum addresses that have previously signed outgoing transactions.
 
-| File          | Description                               |
-| ------------- | ----------------------------------------- |
-| public.txt    | Recovered public keys                     |
-| not_found.txt | Addresses without recoverable public keys |
-| errors.txt    | Processing errors                         |
+## Features
 
-### Ethereum Addresses Extractor
+- Recover public keys from Ethereum addresses
+- Automatic outgoing transaction discovery
+- ECDSA public key recovery
+- Address verification
+- Automatic RPC failover
+- Multi-threaded processing
+- Live terminal dashboard
+- Automatic output saving
 
-| File          | Description                  |
-| ------------- | ---------------------------- |
-| addresses.txt | Extracted Ethereum addresses |
+## Install
 
-### Ethereum TXID Extractor
+```bash
+pip install -r requirements/pub_requirements.txt
+```
 
-| File      | Description                  |
-| --------- | ---------------------------- |
-| txids.txt | Extracted transaction hashes |
+## Run
+
+```bash
+python scripts/ethereum_public_key_finder.py
+```
+
+## Preview
+
+![Ethereum Public Key Finder](images/public_key_finder.png)
+
+## Input
+
+```text
+output/addresses.txt
+```
+
+## Output
+
+```text
+output/public.txt
+output/not_found.txt
+output/errors.txt
+```
 
 ---
 
-# Performance
+# Ethereum Addresses Extractor
 
-* Multi-threaded architecture
-* Automatic RPC load balancing
-* Automatic retry mechanism
-* Automatic rate-limit handling
-* Real-time progress dashboard
-* Resume support
-* Low memory usage
+Extract Ethereum addresses directly from blockchain transactions.
+
+## Features
+
+- High-speed address extraction
+- Multi-threaded architecture
+- SQLite database support
+- Duplicate removal
+- Automatic RPC failover
+- Resume support
+- Live terminal dashboard
+- Automatic output saving
+
+## Install
+
+```bash
+pip install -r requirements/add_requirements.txt
+```
+
+## Run
+
+```bash
+python scripts/ethereum_addresses_extractor.py
+```
+
+## Preview
+
+![Ethereum Addresses Extractor](images/addresses_extractor.png)
+
+## Output
+
+```text
+output/addresses.txt
+```
+
+---
+
+# Ethereum TXID Extractor
+
+Extract Ethereum transaction hashes (TXIDs) directly from blockchain blocks.
+
+## Features
+
+- High-speed block scanner
+- Multi-threaded processing
+- SQLite database support
+- Automatic RPC switching
+- Resume support
+- Live terminal dashboard
+- Automatic output saving
+
+## Install
+
+```bash
+pip install -r requirements/tx_requirements.txt
+```
+
+## Run
+
+```bash
+python scripts/ethereum_txid_extractor.py
+```
+
+## Preview
+
+![Ethereum TXID Extractor](images/txid_extractor.png)
+
+## Output
+
+```text
+output/txids.txt
+```
 
 ---
 
 # Terminal Dashboard
 
-The Public Key Finder displays a live dashboard including:
+All tools include a modern live terminal dashboard with real-time statistics.
 
-* Addresses processed
-* Public keys recovered
-* Addresses not found
-* Processing speed
-* Elapsed time
-* Estimated time remaining (ETA)
-* Active workers
-* Active RPC endpoints
-* Explorer requests
-* RPC requests
-* Current address
-* Latest transaction
-* Latest result
+The dashboard displays:
 
-The dashboard updates in place, keeping the terminal clean without continuously scrolling.
+- Current progress
+- Addresses processed
+- Transactions processed
+- Public keys recovered
+- Processing speed
+- Elapsed time
+- Estimated time remaining (ETA)
+- Active workers
+- Active RPC endpoints
+- Explorer requests
+- RPC requests
+- Latest processed item
+- Current status
+
+The dashboard updates in place without continuously scrolling, keeping the terminal clean and easy to read.
+
+---
+
+# Requirements
+
+- Python 3.10+
+- Internet connection
+- Public Ethereum RPC endpoints
+
+---
+
+# Output Files
+
+| File | Description |
+|------|-------------|
+| output/addresses.txt | Extracted Ethereum addresses |
+| output/public.txt | Recovered public keys |
+| output/txids.txt | Extracted transaction hashes |
+| output/not_found.txt | Addresses without recoverable public keys |
+| output/errors.txt | Processing errors |
+
+---
+
+# Performance
+
+- Multi-threaded architecture
+- Automatic RPC load balancing
+- Automatic retry mechanism
+- Automatic failover
+- Resume support
+- Live progress dashboard
+- Optimized for large datasets
+- Low memory consumption
 
 ---
 
 # Disclaimer
 
-This software is intended for blockchain research, educational purposes, interoperability testing, and analysis of publicly available blockchain data.
+This project is intended for blockchain research, education, interoperability testing, and analysis of publicly available blockchain data.
 
-It does **not** bypass cryptographic security, recover private keys, or access non-public information.
+It does **not** recover private keys, bypass cryptographic security, or access non-public information.
 
 ---
 
@@ -243,3 +258,5 @@ It does **not** bypass cryptographic security, recover private keys, or access n
 MIT License
 
 Feel free to use, modify, and contribute.
+
+If you find this project useful, consider giving the repository a ⭐ on GitHub.
