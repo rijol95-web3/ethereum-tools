@@ -146,26 +146,26 @@ pip install -r tx_requirements.txt
 ---
 
 ## Repository Structure
-
-```text
 .
-├── ethereum_public_key_finder.py
-├── ethereum_addresses_extractor.py
-├── ethereum_txid_extractor.py
+├── scripts
+│   ├── ethereum_public_key_finder.py
+│   ├── ethereum_addresses_extractor.py
+│   └── ethereum_txid_extractor.py
 │
-├── addresses.txt
-├── public.txt
-├── txids.txt
-├── not_found.txt
-├── errors.txt
+├── requirements
+│   ├── pub_requirements.txt
+│   ├── add_requirements.txt
+│   └── tx_requirements.txt
 │
-├── add_requirements.txt
-├── pub_requirements.txt
-├── tx_requirements.txt
+├── output
+│   ├── addresses.txt
+│   ├── public.txt
+│   ├── txids.txt
+│   ├── not_found.txt
+│   └── errors.txt
 │
-├── LICENSE
-└── README.md
-```
+├── README.md
+└── LICENSE
 
 ---
 
