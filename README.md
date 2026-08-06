@@ -257,10 +257,18 @@ It does **not** recover private keys, bypass cryptographic security, or access n
 
 MIT License
 
-Feel free to use, modify, and contribute.
+---
 
 <p align="center">
-❤️ Made with <b>RiJoL95</b> for the Ethereum open-source community.
+
+❤️ Crafted with passion by <strong>RiJoL95</strong> for the Ethereum open-source community.
+
 </p>
 
-If you find this project useful, consider giving the repository a ⭐ on GitHub.
+<p align="center">
+
+If this project helps you, consider leaving a ⭐ on GitHub — every star is greatly appreciated.
+
+</p>
+
+---
