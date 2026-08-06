@@ -259,4 +259,8 @@ MIT License
 
 Feel free to use, modify, and contribute.
 
+<p align="center">
+❤️ Made with <b>RiJoL95</b> for the Ethereum open-source community.
+</p>
+
 If you find this project useful, consider giving the repository a ⭐ on GitHub.
