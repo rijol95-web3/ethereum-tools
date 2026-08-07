@@ -36,6 +36,7 @@ cd ethereum-tools
 
 ```text
 .
+│
 ├── images
 │   ├── public_key_finder.png
 │   ├── addresses_extractor.png
@@ -57,6 +58,14 @@ cd ethereum-tools
 │   ├── txids.txt
 │   ├── not_found.txt
 │   └── errors.txt
+│
+├── all_eth_addresses
+│   ├── merge.py
+│   └── chunks24mb
+│       ├── eth_addresses_0001.txt
+│       ├── eth_addresses_0002.txt
+│       ├── eth_addresses_0003.txt
+│       └── ...
 │
 ├── README.md
 └── LICENSE
